@@ -118,7 +118,7 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
         col2.metric("Presentes", totalPresentes,  "{}%".format(porcentajePresentes))
         col3.metric("Ausentes", totalAusentes,  "{}%". format(porcentajeAusentes))
 
-        fig = px.pie(datosMerge, values=[totalPresentes, totalAusentes], names=["Presentes", "Ausentes"], hole=0.4,  title="Grafico de asistencia")
+        fig = px.pie(datosMerge, values=[totalPresentes, totalAusentes], names=["Presentes", "Ausentes"], hole=0.4,  title="Gráfico de asistencia")
 
         fig.update_traces(textposition= "inside", textinfo= "percent", textfont=dict(size=25))
 
