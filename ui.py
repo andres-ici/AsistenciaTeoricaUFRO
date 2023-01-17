@@ -53,7 +53,7 @@ def verificar2(data):
 
 #Titulo y subir archivos
 
-st.title("Proyecto asistencia teórica")
+st.title("Proyecto Asistencia Teórica")
 
 st.header("Ingresar archivos")
 
