@@ -6,8 +6,6 @@ import gspread_dataframe as gd
 import plotly.express as px
 from PIL import Image
 
-logo = Image.open('https://i.imgur.com/YMei8p1.png')
-
 
 # Connect to Google Sheets
 
@@ -21,12 +19,6 @@ credentials = service_account.Credentials.from_service_account_info(
 
 
 client = gspread.authorize(credentials=credentials)
-
-
-
-#credentials = ServiceAccountCredentials.f(st.secrets["gcp_service_account"])
-
-#client = gspread.authorize(credentials=credentials)
 
 
 #Funciones
@@ -56,7 +48,8 @@ def verificar2(data):
 #Titulo y subir archivos
 
 Col1, Col2, Col3 = st.columns(3)
-Col2.image(logo,use_column_width='auto')
+
+Col2.image('https://i.imgur.com/YMei8p1.png',use_column_width='auto')
 
 st.title("Proyecto Asistencia Teórica")
 
