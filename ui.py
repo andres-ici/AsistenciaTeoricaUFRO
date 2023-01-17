@@ -53,7 +53,7 @@ def verificar2(data):
 
 #Titulo y subir archivos
 
-st.title("Proyecto asistencia teorica")
+st.title("Proyecto asistencia teórica")
 
 st.header("Ingresar archivos")
 
@@ -69,7 +69,7 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
     asistencia = pd.read_csv(asistenciaFile, header=None)
     registro = pd.read_csv(registroFile, header=None)
 
-    if verificar1(asistencia) or verificar2(registro): #Varifica el formato de los csv subidos
+    if verificar1(asistencia) or verificar2(registro): #Verifica el formato de los csv subidos
 
         duracionTotal = [asistencia.iloc[1,5]]
         maximo =  int(duracionTotal[0])
@@ -81,10 +81,10 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
         datosRegistro = registro.iloc[1:,[0,1,5,2]]
 
         datosAsistencia.rename(columns={1:"Correo", 2:"Tiempo"}, inplace = True)
-        datosRegistro.rename(columns={0:"Nombre", 1:"Apellido", 5:"Matricula", 2:"Correo"}, inplace = True)
+        datosRegistro.rename(columns={0:"Nombre", 1:"Apellido", 5:"Matrícula", 2:"Correo"}, inplace = True)
 
         datosMerge = pd.merge(datosAsistencia, datosRegistro, how = "outer")
-        datosMerge = datosMerge.reindex(columns=["Correo", "Matricula", "Nombre", "Apellido", "Tiempo"])
+        datosMerge = datosMerge.reindex(columns=["Correo", "Matrícula", "Nombre", "Apellido", "Tiempo"])
         datosMerge["Tiempo"] = datosMerge["Tiempo"].astype("int64")
         datosMerge["Estado"] = ["Presente" if a >= minimo else "Ausente" for a in datosMerge["Tiempo"]]
 
@@ -111,7 +111,7 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
 
         col33.metric("", "")
         col11.metric("Tiempo total", "{} min".format(maximo))
-        col22.metric("Tiempo minimo para estar presente", "{} min".format(minimo))
+        col22.metric("Tiempo mínimo para estar presente", "{} min".format(minimo))
 
         col1, col2, col3 = st.columns(3)
         col1.metric("Participantes", total,"", delta_color="off")
@@ -150,7 +150,7 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
 
         with colModulo:
 
-            modulo = st.selectbox("Modulo", ("1", "2", "3", "4", "5"))
+            modulo = st.selectbox("Módulo", ("1", "2", "3", "4", "5"))
 
         if st.button('Subir datos'):
 
