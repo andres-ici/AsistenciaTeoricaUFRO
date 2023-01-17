@@ -4,7 +4,9 @@ import gspread
 from google.oauth2 import service_account
 import gspread_dataframe as gd
 import plotly.express as px
+from PIL import Image
 
+logo = Image.open('https://i.imgur.com/YMei8p1.png')
 
 
 # Connect to Google Sheets
@@ -52,6 +54,9 @@ def verificar2(data):
 
 
 #Titulo y subir archivos
+
+Col1, Col2, Col3 = st.columns(3)
+Col2.image(logo,use_column_width='auto')
 
 st.title("Proyecto Asistencia Teórica")
 
