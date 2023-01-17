@@ -75,6 +75,8 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
         fecha = [asistencia.iloc[1,2]]
         fecha = fecha[0]
 
+        asistencia = asistencia[asistencia[3] != "No"] #Se quita el creador de la reunion
+
         datosAsistencia = asistencia.iloc[3:,[1,2]]
         datosRegistro = registro.iloc[1:,[0,1,5,2]]
 
