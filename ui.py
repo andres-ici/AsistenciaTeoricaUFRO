@@ -55,6 +55,9 @@ st.title("Asistencia Teórica")
 
 st.header("Ingresar archivos")
 
+link = '[Manual obtención archivos](https://docs.google.com/document/d/1W0GjteAhdSj_mM0hi0mL9GFfRTYB4hqnM9qlzVXSEiY/edit?usp=sharing)'
+st.markdown(link, unsafe_allow_html=True)
+
 asistenciaFile = st.file_uploader("Participantes (participants_xxxxxxxx.csv)", type="csv")
 registroFile = st.file_uploader("Registro (xxxxxxxx_RegistrationReport.csv)", type="csv")
 
