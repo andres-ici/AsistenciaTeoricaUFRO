@@ -55,8 +55,8 @@ st.title("Asistencia Teórica")
 
 st.header("Ingresar archivos")
 
-asistenciaFile = st.file_uploader("Asistencia", type="csv")
-registroFile = st.file_uploader("Registro", type="csv")
+asistenciaFile = st.file_uploader("Participantes (participants_xxxxxxxx.csv)", type="csv")
+registroFile = st.file_uploader("Registro (xxxxxxxx_RegistrationReport.csv)", type="csv")
 
 #Cuando se suben los archivos
 
