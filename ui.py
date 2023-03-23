@@ -85,7 +85,8 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
 
         datosMerge = pd.merge(datosAsistencia, datosRegistro, how = "outer")
         datosMerge = datosMerge.reindex(columns=["Correo", "Matrícula", "Nombre", "Apellido", "Tiempo"])
-        datosMerge["Tiempo"] = datosMerge["Tiempo"].astype("int64")
+
+        datosMerge["Tiempo"] = datosMerge["Tiempo"].fillna(0).astype(int)
         datosMerge["Estado"] = ["Presente" if a >= minimo else "Ausente" for a in datosMerge["Tiempo"]]
 
         presentes = datosMerge[datosMerge["Tiempo"] >= minimo]
