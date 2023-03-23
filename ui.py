@@ -83,6 +83,8 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
         datosAsistencia.rename(columns={1:"Correo", 2:"Tiempo"}, inplace = True)
         datosRegistro.rename(columns={0:"Nombre", 1:"Apellido", 5:"Matrícula", 2:"Correo"}, inplace = True)
 
+        datosRegistro["Correo"] = datosRegistro["Correo"].str.lower()
+
         datosMerge = pd.merge(datosAsistencia, datosRegistro, how = "outer")
         datosMerge = datosMerge.reindex(columns=["Correo", "Matrícula", "Nombre", "Apellido", "Tiempo"])
 
