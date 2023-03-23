@@ -118,8 +118,8 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
 
         col1, col2, col3 = st.columns(3)
         col1.metric("Participantes", total,"", delta_color="off")
-        col2.metric("Presentes", totalPresentes,  "{}%".format(porcentajePresentes))
-        col3.metric("Ausentes", totalAusentes,  "{}%". format(porcentajeAusentes))
+        col2.metric("Presentes", totalPresentes,  "{}%".format(int(porcentajePresentes)))
+        col3.metric("Ausentes", totalAusentes,  "{}%". format(int(porcentajeAusentes)))
 
         fig = px.pie(datosMerge, values=[totalPresentes, totalAusentes], names=["Presentes", "Ausentes"], hole=0.4,  title="Gráfico de asistencia")
 
