@@ -198,7 +198,7 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
 
             worksheet = sheet.worksheet(claseWS)
 
-            gd.set_with_dataframe(worksheet, datosMerge)
+            gd.set_with_dataframe(worksheet, presentes)
             st.write("Datos subidos")
     
     else:
