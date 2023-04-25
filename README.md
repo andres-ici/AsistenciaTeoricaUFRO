@@ -10,6 +10,5 @@ Para que el programa funcione de forma óptima se tiene que agregar un registro 
 
 ![Image text](https://i.imgur.com/B750fFU.jpg)
 
-![Image text](https://i.imgur.com/BqsCHp4.jpg)
 
 
