@@ -1,6 +1,6 @@
 # AsistenciaTeoricaUFRO
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://<asistenciateoricaufro>.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://asistenciateoricaufro.streamlit.app)
 
 Página web capaz de recibir datos de Zoom, y clasificar según el tiempo de conexión (45%) entre presente o ausente.
 
