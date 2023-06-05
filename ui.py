@@ -49,7 +49,13 @@ def verificar2(data):
 
 Col1, Col2, Col3 = st.columns(3)
 
-Col2.image('https://i.imgur.com/YMei8p1.png',use_column_width='auto')
+if st.theme == 'light':
+
+    Col2.image('https://i.imgur.com/YMei8p1.png',use_column_width='auto')
+
+else:
+
+    Col2.image('https://i.imgur.com/law7tvC.png',use_column_width='auto')
 
 st.title("Asistencia Teórica")
 
