@@ -152,7 +152,7 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
 
         #Subir a Google drive
 
-        st.header("Subir datos a Google Drive")
+        st.header("Subir datos a Google Drive (solo habilitado para asignatura A2)")
 
         colAsignatura, colModulo, colClase = st.columns(3)
 
@@ -168,7 +168,7 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
 
             if asignatura == "A2":
 
-                modulo = st.selectbox("Módulo", ("13",))
+                modulo = st.selectbox("Módulo", ("1", "2", "16"))
 
             if asignatura == "A3":
 
@@ -181,7 +181,7 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
 
         with colClase:
 
-            clase = st.selectbox("Clase", ("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"))
+            clase = st.selectbox("Clase", ("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"))
 
         if st.button('Subir datos'):
 
@@ -189,8 +189,12 @@ if (asistenciaFile and registroFile) is not None: #Varificar si se suben los arc
                 sheet = client.open_by_url(st.secrets["A1modulo1"])
             elif asignatura == "A1" and modulo == "2":
                 sheet = client.open_by_url(st.secrets["A1modulo2"])
-            elif asignatura == "A2" and modulo == "13":
-                sheet = client.open_by_url(st.secrets["A2modulo13"])
+            elif asignatura == "A2" and modulo == "1":
+                sheet = client.open_by_url(st.secrets["A2modulo1"])
+            elif asignatura == "A2" and modulo == "2":
+                sheet = client.open_by_url(st.secrets["A2modulo2"])
+            elif asignatura == "A2" and modulo == "16":
+                sheet = client.open_by_url(st.secrets["A2modulo16"])
             elif asignatura == "A3" and modulo == "1":
                 sheet = client.open_by_url(st.secrets["A3modulo1"])
             elif asignatura == "A3" and modulo == "2":
